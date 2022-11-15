@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   Button,
-  Box,
   Card,
   Stack,
   CardMedia,
@@ -10,7 +9,6 @@ import {
   Typography,
   CardContent,
 } from "@mui/material";
-import { ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { removeFromReadingList } from "../redux/BookstoreSlice";
 import { useDispatch, useSelector } from "react-redux";
