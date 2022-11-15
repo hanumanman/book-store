@@ -43,46 +43,47 @@ const ReadingPage = () => {
         flexWrap={"wrap"}
       >
         {books.map((book) => (
-          <Card
-            key={book.id}
-            sx={{
-              width: "12rem",
-              height: "27rem",
-              marginBottom: "2rem",
-            }}
-          >
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                image={`${BACKEND_API}/${book.imageLink}`}
-                alt={`${book.title}`}
-                onClick={() => handleClickBook(book.id)}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {`${book.title}`}
-                </Typography>
-                <Typography gutterBottom variant="body1" component="div">
-                  {`${book.author}`}
-                </Typography>
-                <Button
-                  sx={{
-                    position: "absolute",
-                    top: "5px",
-                    right: "5px",
-                    backgroundColor: "secondary.light",
-                    color: "secondary.contrastText",
-                    padding: "0",
-                    minWidth: "1.5rem",
-                  }}
-                  size="small"
-                  onClick={() => removeBook(book.id)}
-                >
-                  &times;
-                </Button>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+          <div key={book.id} style={{ position: "relative" }}>
+            <Card
+              sx={{
+                width: "12rem",
+                height: "27rem",
+                marginBottom: "2rem",
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  image={`${BACKEND_API}/${book.imageLink}`}
+                  alt={`${book.title}`}
+                  onClick={() => handleClickBook(book.id)}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {`${book.title}`}
+                  </Typography>
+                  <Typography gutterBottom variant="body1" component="div">
+                    {`${book.author}`}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            <Button
+              sx={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                backgroundColor: "secondary.light",
+                color: "secondary.contrastText",
+                padding: "0",
+                minWidth: "1.5rem",
+              }}
+              size="small"
+              onClick={() => removeBook(book.id)}
+            >
+              &times;
+            </Button>
+          </div>
         ))}
       </Stack>
     </Container>
