@@ -42,6 +42,7 @@ const HomePage = () => {
         let url = `/books?_page=${pageNum}&_limit=${limit}`;
         if (query) url += `&q=${query}`;
         const res = await api.get(url);
+
         setBooks(res.data);
         setErrorMessage("");
       } catch (error) {
