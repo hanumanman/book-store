@@ -71,8 +71,8 @@ const ReadingPage = () => {
                 position: "absolute",
                 top: 0,
                 right: 0,
-                backgroundColor: "secondary.light",
-                color: "secondary.contrastText",
+                backgroundColor: "#FDA65D",
+                color: "#FFF",
                 padding: "0",
                 minWidth: "1.5rem",
               }}
